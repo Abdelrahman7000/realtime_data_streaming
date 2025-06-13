@@ -31,8 +31,7 @@ def create_table(session):
     logging.info('Table created successfully') 
 
 
-# def insert_data(session,**kwargs):#insert data from kafka
-#     pass 
+
 
 def create_spark_connection():
     try:
@@ -66,7 +65,6 @@ def connect_to_kafka(spark_conn):
 
 def create_cassandra_connection():
     try:
-        #cluster = Cluster(['cassandra'])
         cluster = Cluster(
         contact_points=['cassandra'],
         load_balancing_policy=RoundRobinPolicy(),
