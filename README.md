@@ -21,19 +21,27 @@ This project demonstrates a real-time data ingestion pipeline built with Apache 
 </ul>
 
 <h3>Getting Started</h3>
-To start and run this project, you have to have astro cli installed on your machine so you can easily initialize the airflow along with other services.
+To run this project, ensure that you have the Astro CLI installed on your machine. Astro CLI makes it easy to initialize and run Apache Airflow along with other necessary services.
 <ol>
   <li>Clone the repository:</li>
   
       git clone https://github.com/Abdelrahman7000/realtime_data_streaming.git
+
   
   <li> Navigate to the project directory.</li>
-  <li>We are using "streaming-etl_a8a139_airflow" as an external Docker network and that netword is shared across all the containers, and to create it you need to run the following command in the termainal:</li>
-
-      docker network create streaming-etl_a8a139_airflow
-
-  <li>Spin up the services:</li>
+  
+  <li>This project uses an external Docker network called streaming-etl_a8a139_airflow, which is shared across all containers.
+Ensure you know the network name where Airflow is running. Then, update the network settings for all containers in the docker-compose.override.yml file accordingly.</li>
+  
+  <li>Initialize the Astro project and start the services:</li>
 
       astro dev init
       astro dev start
+
+  <li> Run the stream.py file via Airflow UI</li>
+  
+  <li>To execute the streaming job, open a terminal inside the Spark master container and run:</li>
+
+      spark-submit   --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1,com.datastax.spark:spark-cassandra-connector_2.12:3.5.0   spark_stream.py
+
 </ol>
