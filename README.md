@@ -28,6 +28,10 @@ To start and run this project, you have to have astro cli installed on your mach
       git clone https://github.com/Abdelrahman7000/realtime_data_streaming.git
   
   <li> Navigate to the project directory.</li>
+  <li>We are using "streaming-etl_a8a139_airflow" as an external Docker network and that netword is shared across all the containers, and to create it you need to run the following command in the termainal:</li>
+
+      docker network create streaming-etl_a8a139_airflow
+
   <li>Spin up the services:</li>
 
       astro dev init
