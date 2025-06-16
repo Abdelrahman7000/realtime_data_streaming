@@ -29,6 +29,7 @@ To start and run this project, you have to have astro cli installed on your mach
   
   <li> Navigate to the project directory.</li>
   <li>Spin up the services:</li>
-  
+
+      astro dev init
       astro dev start
 </ol>
